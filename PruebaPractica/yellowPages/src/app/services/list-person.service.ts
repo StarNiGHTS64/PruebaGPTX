@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { PersonInterface } from '../person';
+import { PersonAttributes } from '../models/person';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListPersonService {
 
-  personInterfaceList: PersonInterface [] = [
+  personInterfaceList: PersonAttributes [] = [
     {
     id: 64,
     firstName: 'Carlos',
@@ -49,11 +49,11 @@ export class ListPersonService {
     }
   ];
 
-  getAllPersons(): PersonInterface[] {
+  getAllPersons(): PersonAttributes[] {
     return this.personInterfaceList
   }
 
-  getPersonById(id: number): PersonInterface | undefined{
+  getPersonById(id: number): PersonAttributes | undefined{
     return this.personInterfaceList.find(person =>
       person.id == id
     );

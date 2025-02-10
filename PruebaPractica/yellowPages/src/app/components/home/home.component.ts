@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ListPersonComponent } from '../list-person/list-person.component';
 import { CommonModule } from '@angular/common';
-import { PersonInterface } from '../../person';
+import { PersonAttributes } from '../../models/person';
 import { ListPersonService } from '../../services/list-person.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -18,8 +19,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  personList: PersonInterface [] = [];
-  fileteredPersonList: PersonInterface [] = [];
+  personList: PersonAttributes [] = [];
+  fileteredPersonList: PersonAttributes [] = [];
 
   listPersonService: ListPersonService = inject(ListPersonService);
 

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ListPersonService } from '../../services/list-person.service';
-import { PersonInterface } from '../../person';
+import { PersonAttributes } from '../../models/person';
 
 @Component({
   selector: 'app-details',
@@ -16,7 +16,7 @@ import { PersonInterface } from '../../person';
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   listPersonService = inject(ListPersonService);
-  personInterface: PersonInterface | undefined;
+  personInterface: PersonAttributes | undefined;
 
   constructor(){
     const personId = Number(this.route.snapshot.params['id']);

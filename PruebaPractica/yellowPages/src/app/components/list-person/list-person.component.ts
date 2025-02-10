@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonInterface } from '../../person';
+import { PersonAttributes } from '../../models/person';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -15,5 +15,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './list-person.component.scss'
 })
 export class ListPersonComponent {
-  @Input() personInterface!: PersonInterface;
+  @Input() personInterface!: PersonAttributes;
 }
