@@ -1,0 +1,23 @@
+//getAllPeople
+{
+    getAllPeople {
+      id,
+      firstName,
+      patternLastName,
+      matternLastName,
+      address,
+      phoneNumber,
+    }
+}
+
+//getPerson
+{
+    getUser(id: 10){
+        id
+        firstName,
+        patternLastName,
+        matternLastName,
+        address,
+        phoneNumber,
+    }
+}

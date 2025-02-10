@@ -1,6 +1,6 @@
 import {GraphQLString} from 'graphql';
 import {Person} from '../../Entities/Person';
-import { PersonType, PersonResponse } from '../typeDefs/Person';
+import { PersonType, PersonResponse } from '../Types/Person';
 
 export const CREATE_PERSON = {
     type: PersonType,
