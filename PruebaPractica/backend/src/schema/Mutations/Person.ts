@@ -1,6 +1,7 @@
-import {GraphQLString} from 'graphql';
+import {GraphQLBoolean, GraphQLID, GraphQLString} from 'graphql';
 import {Person} from '../../Entities/Person';
 import { PersonType, PersonResponse } from '../Types/Person';
+import { resolve } from 'path';
 
 export const CREATE_PERSON = {
     type: PersonType,
@@ -28,8 +29,21 @@ export const CREATE_PERSON = {
             id: result.raw.insertId
         })
 
-        console.log(response[0]);
+        //console.log(response[0]);
 
         return response[0];
+    }
+}
+
+export const DELETE_PERSON = {
+    type: GraphQLBoolean,
+    args: {
+        id: { type: GraphQLID },
+    },
+    async resolve(_: any, {id}: any) {
+        const result = await Person.delete(id)
+        //console.log(result);
+        if(result.affected === 1) return true;
+        return false;
     }
 }

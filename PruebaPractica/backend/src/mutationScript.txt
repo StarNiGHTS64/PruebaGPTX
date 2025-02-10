@@ -14,3 +14,10 @@ mutation {
     phoneNumber
   }
 }
+
+//deletePerson
+mutation {
+  deletePerson(id: 10){
+    
+  }
+}
