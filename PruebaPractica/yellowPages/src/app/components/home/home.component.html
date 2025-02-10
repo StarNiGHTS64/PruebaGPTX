@@ -1,0 +1,38 @@
+<section>
+    <form>
+      <input type="text" placeholder="Filter by name" #filter>
+      <button class="primary" type="button" (click)="filterPeople(filter.value)">Filter</button>
+    </form>
+</section>
+
+<section class="results">
+  <app-list-person 
+    *ngFor="let personInterface of fileteredPersonList"
+    [personInterface]="personInterface">
+  </app-list-person>
+
+</section>
+
+<article>
+  <section class="listing-apply">
+    <h2 class="section-heading">Register new person</h2>
+    <form [formGroup]='createForm' (submit)="createPerson()">
+      <label for="first-name">First Name</label>
+      <input id="first-name" type="text" formControlName="firstName">
+
+      <label for="patern-last-name"> Patern Last Name</label>
+      <input id="patern-last-name" type="text" formControlName="paternLastName">
+
+      <label for="matern-last-name"> Matern Last Name</label>
+      <input id="matern-last-name" type="text" formControlName="maternLastName">
+
+      <label for="address">Address</label>
+      <input id="address" type="text" formControlName="address">
+
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" type="text" formControlName="phoneNumber">
+
+      <button type="submit" class="primary">Register</button>
+    </form>
+  </section>
+</article>

@@ -1,0 +1,6 @@
+<section class="listing">
+    <h2 class="listing-heading">{{ personInterface.firstName }} {{ personInterface.paternLastName }} {{ personInterface.maternLastName}}</h2>
+    <p class="listing-location">{{ personInterface.adress}}, {{personInterface.phoneNumber }}</p>
+
+    <a [routerLink]="['/details', personInterface.id]">Learn More</a>
+</section>
