@@ -18,6 +18,22 @@ mutation {
 //deletePerson
 mutation {
   deletePerson(id: 10){
-    
+
   }
+}
+
+//updatePerson
+mutation {
+  updatePerson(
+    id: 3, 
+    firstName: "Star", 
+    patternLastName: "NiGHTS", 
+    matternLastName: "Rozen+", 
+    address: "Starlight", 
+    phoneNumber: "444-111-3636"
+  )
+ {
+  success
+  message
+	}
 }
